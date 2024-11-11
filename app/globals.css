@@ -15,7 +15,213 @@
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ffd1dc, #ff9eaa);
+  font-family: 'Arial', sans-serif;
+  color: white;
+  perspective: 1000px;
 }
+
+.card {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  max-width: 600px;
+  width: 90%;
+  animation: float 3s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(255, 192, 203, 0.4);
+}
+
+/* [Le reste de votre CSS ici, exactement comme dans votre fichier original] */
+
+.heart-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 2rem;
+}
+
+.heart-shape {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  clip-path: path('M100,30 C60,7 0,7 0,76 C0,131 100,190 100,190 C100,190 200,131 200,76 C200,7 140,7 100,30 Z');
+  background: pink;
+  animation: pulse 2s infinite;
+}
+
+.profile-img {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  clip-path: path('M90,20 C55,0 0,0 0,65 C0,115 90,170 90,170 C90,170 180,115 180,65 C180,0 125,0 90,20 Z');
+  object-fit: cover;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  font-family: 'Arial', sans-serif;
+  color: white;
+  perspective: 1000px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  max-width: 600px;
+  width: 90%;
+  animation: float 3s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.diamond-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: 
+      radial-gradient(circle at 0% 0%, transparent 50%, rgba(255,255,255,0.1) 50%),
+      radial-gradient(circle at 100% 0%, transparent 50%, rgba(255,255,255,0.1) 50%),
+      radial-gradient(circle at 100% 100%, transparent 50%, rgba(255,255,255,0.1) 50%),
+      radial-gradient(circle at 0% 100%, transparent 50%, rgba(255,255,255,0.1) 50%);
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.heart-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 2rem;
+}
+
+.heart-shape {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  clip-path: path('M100,30 C60,7 0,7 0,76 C0,131 100,190 100,190 C100,190 200,131 200,76 C200,7 140,7 100,30 Z');
+  background: pink;
+  animation: pulse 2s infinite;
+}
+
+.profile-img {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  clip-path: path('M90,20 C55,0 0,0 0,65 C0,115 90,170 90,170 C90,170 180,115 180,65 C180,0 125,0 90,20 Z');
+  object-fit: cover;
+}
+
+/*
+.profile-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 0 auto 2rem;
+  border: 4px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+*/
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.floating-hearts {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.floating-heart {
+  position: absolute;
+  font-size: 1.5rem;
+  animation: float-up 4s linear infinite;
+  opacity: 0.3;
+  color: #ff758c;
+}
+
+@keyframes float-up {
+  0% { transform: translateY(100%) rotate(0deg); opacity: 0.3; }
+  100% { transform: translateY(-100%) rotate(360deg); opacity: 0; }
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #fff, #7dd3fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.sparkles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate3d(1, 1, 1, 0deg); }
+  50% { transform: translateY(-10px) rotate3d(1, 1, 1, 2deg); }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+.sparkle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: white;
+  border-radius: 50%;
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+.decorative-element {
+  position: absolute;
+  font-size: 3rem;
+  opacity: 0.1;
+  color: #ff758c;
+}
+
+.top-left { top: 20px; left: 20px; }
+.bottom-right { bottom: 20px; right: 20px; }
